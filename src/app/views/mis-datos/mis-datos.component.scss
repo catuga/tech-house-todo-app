@@ -1,0 +1,8 @@
+form {
+  padding: 28px 17px 36px;
+  input {
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
+  }
+}

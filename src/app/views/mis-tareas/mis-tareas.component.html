@@ -1,0 +1,25 @@
+<div class="mis-tareas">
+  @if (isLoading) {
+    <div class="loading-spinner" >
+      <div class="spinner"></div>
+    </div>
+  }
+
+  <div [class.content-blur]="isLoading">
+    <div class="tareas-list">
+      @for (todo of todos; track todo.id) {
+        <app-tarea [todo]="todo"></app-tarea>
+      }
+    </div>
+  
+    <div class="pagination">
+      <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">
+        Anterior
+      </button>
+      <span>{{ currentPage }} de {{ totalPages }}</span>
+      <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">
+        Siguiente
+      </button>
+    </div>
+  </div>
+</div>
