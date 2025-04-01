@@ -31,8 +31,8 @@ A task management application built with Angular 17 and Node.js, featuring a cle
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/catuga/tech-house.git
-cd tech-house
+git clone https://github.com/catuga/tech-house-todo-app.git
+cd tech-house-todo-app
 ```
 
 2. Install frontend dependencies:
@@ -63,17 +63,27 @@ npm test
 ## Project Structure
 
 ```
-tech-house/
-├── src/                  # Frontend source code
-│   ├── app/              # Angular application
-│   │   ├── components/   # Reusable components
-│   │   ├── services/     # Angular services
-│   │   ├── utils/        # Utility functions and types
-│   │   └── views/        # Page components
-├── backend/              # Backend source code
-│   ├── src/              # Node.js source code
-│   └── package.json      # Backend dependencies
-└── package.json          # Frontend dependencies
+tech-house-todo-app/
+├── src/                     # Frontend source code
+│   ├── app/                 # Angular application
+│   │   ├── components/      # Reusable components
+│   │   ├── services/        # Angular services
+│   │   ├── utils/           # Utility functions and types
+│   │   └── views/           # Page components
+│   ├── assets/              # Static assets
+│   │   └── scss/            # SCSS styles
+│   │       ├── base/        # Base styles
+│   │       │   ├── _variables.scss    # Global variables
+│   │       │   ├── _typography.scss   # Typography styles
+│   │       │   └── _reset.scss        # Reset/normalize styles
+│   │       ├── components/            # Component styles
+│   │       │   └── _buttons.scss      # Button styles
+│   │       └── styles.scss  # Main styles file
+│   └── styles.scss          # Styles entry point
+├── backend/                 # Backend source code
+│   ├── src/                 # Node.js source code
+│   └── package.json         # Backend dependencies
+└── package.json             # Frontend dependencies
 ```
 
 ## License
