@@ -10,7 +10,7 @@ import { NewTask } from '../../utils/types';
   styleUrl: './add-task-modal.component.scss'
 })
 export class AddTaskModalComponent {
-  @Output() close = new EventEmitter<void>();
+  @Output() closeModal = new EventEmitter<void>();
   @Output() save = new EventEmitter<NewTask>();
 
   taskForm: FormGroup;
@@ -31,7 +31,7 @@ export class AddTaskModalComponent {
   }
 
   onClose() {
-    this.close.emit();
+    this.closeModal.emit();
   }
 
   onSave() {

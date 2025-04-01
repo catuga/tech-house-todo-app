@@ -2,7 +2,7 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { TasksService } from '../../services/tasks.service';
 import { NewTask, Task } from '../../utils/types';
 import { TaskComponent } from '../../components/task/task.component';
-import { finalize, tap } from 'rxjs';
+import { finalize } from 'rxjs';
 import { AddTaskModalComponent } from '../../components/add-task-modal/add-task-modal.component';
 
 @Component({
@@ -18,12 +18,10 @@ export class MyTasksComponent implements OnInit {
   hasError = signal(false);
   showModal = signal(false);
 
-  totalPages: number = 0;
-  totalItems: number = 0;
-  currentPage: number = 1;
-  itemsPerPage: number = 3;
-
-  constructor() { }
+  totalPages = 0;
+  totalItems = 0;
+  currentPage = 1;
+  itemsPerPage = 3;
 
   ngOnInit(): void {
     this.isLoading.set(true);
@@ -35,13 +33,12 @@ export class MyTasksComponent implements OnInit {
     this.isLoading.set(true);
     
     this.tasksService.createTask(newTask).subscribe({
-      next: (response) => {
+      next: () => {
         this.currentPage = 1;
         this.loadTasks();
         this.closeModal();
       },
-      error: (error) => {
-        console.error('Error al crear la tarea:', error);
+      error: () => {
         this.hasError.set(true);
         this.isLoading.set(false);
       }
@@ -98,7 +95,7 @@ export class MyTasksComponent implements OnInit {
         }
         this.loadTasks();
       },
-      error: (error) => {
+      error: () => {
         this.hasError.set(true);
         this.isLoading.set(false);
       }
