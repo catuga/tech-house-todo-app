@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NewTask } from '../../utils/types';
 
@@ -30,7 +30,13 @@ export class AddTaskModalComponent {
     });
   }
 
-  onClose() {
+  @HostListener('document:keydown.escape', ['$event'])
+  onEscapePress(event: KeyboardEvent): void {
+    event.preventDefault();
+    this.onClose();
+  }
+
+  onClose(): void {
     this.closeModal.emit();
   }
 

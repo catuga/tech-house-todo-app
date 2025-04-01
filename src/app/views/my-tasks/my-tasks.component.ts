@@ -81,7 +81,7 @@ export class MyTasksComponent implements OnInit {
     this.showModal.set(true);
   }
 
-  closeModal() {
+  closeModal(): void {
     this.showModal.set(false);
   }
 

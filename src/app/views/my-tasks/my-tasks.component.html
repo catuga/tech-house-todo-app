@@ -36,6 +36,5 @@
 </div>
 
 @if (showModal()) {
-<app-add-task-modal (close)="closeModal()" (save)="saveTask($event)">
-</app-add-task-modal>
+  <app-add-task-modal (closeModal)="closeModal()" (save)="saveTask($event)" />
 }
