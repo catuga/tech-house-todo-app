@@ -1,0 +1,26 @@
+label {
+  font-weight: 400;
+  margin-bottom: 8px;
+  display: block;
+  color: $color-black;
+  
+  span {
+    color: $color-error;
+  }
+}
+
+input {
+  box-sizing: border-box;
+  padding: 0 18px;
+  display: block;
+  margin-bottom: 24px;
+  border: 1px solid $color-border;
+  width: 100%;
+  height: 38px;
+  border-radius: 3px;
+}
+
+textarea {
+  font-family: $font-family-primary;
+  box-sizing: border-box;
+}
