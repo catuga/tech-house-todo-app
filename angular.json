@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "todos": {
+    "tech-house-todo-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/todos",
+            "outputPath": "dist/tech-house-todo-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "todos:build:production"
+              "buildTarget": "tech-house-todo-app:build:production"
             },
             "development": {
-              "buildTarget": "todos:build:development"
+              "buildTarget": "tech-house-todo-app:build:development"
             }
           },
           "defaultConfiguration": "development"
