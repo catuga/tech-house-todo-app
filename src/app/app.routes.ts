@@ -1,37 +1,47 @@
 import { Routes } from '@angular/router';
-import { MisDatosComponent } from './views/mis-datos/mis-datos.component';
-import { MisTareasComponent } from './views/mis-tareas/mis-tareas.component';
-import { MisDevolucionesComponent } from './views/mis-devoluciones/mis-devoluciones.component';
-import { MisComunicacionesComponent } from './views/mis-comunicaciones/mis-comunicaciones.component';
-import { MisMejoresAmigosComponent } from './views/mis-mejores-amigos/mis-mejores-amigos.component';
+import { MyTasksComponent } from './views/my-tasks/my-tasks.component';
+import { MyProfileComponent } from './views/my-profile/my-profile.component';
+import { MyReturnsComponent } from './views/my-returns/my-returns.component';
+import { MyBestFriendsComponent } from './views/my-best-friends/my-best-friends.component';
+import { MyCommunicationsComponent } from './views/my-communications/my-communications.component';
+import { ErrorComponent } from './views/error/error.component';
 
 const routeConfig: Routes = [
   { path: '', redirectTo: 'mis-datos', pathMatch: 'full' },
   {
     path: 'mis-datos',
-    component: MisDatosComponent,
+    component: MyProfileComponent,
     title: 'Mis datos',
   },
   {
     path: 'mis-tareas',
-    component: MisTareasComponent,
+    component: MyTasksComponent,
     title: 'Mis tareas',
   },
   {
     path: 'mis-devoluciones',
-    component: MisDevolucionesComponent,
+    component: MyReturnsComponent,
     title: 'Mis devoluciones',
   },
   {
     path: 'mis-comunicaciones',
-    component: MisComunicacionesComponent,
+    component: MyCommunicationsComponent,
     title: 'Mis comunicaciones',
   },
   {
     path: 'mis-mejores-amigos',
-    component: MisMejoresAmigosComponent,
+    component: MyBestFriendsComponent,
     title: 'Mis mejores-amigos',
   },
+  {
+    path: 'error',
+    component: ErrorComponent,
+    title: 'Error'
+  },
+  {
+    path: '**',
+    redirectTo: 'error'
+  }
 ];
 
 export default routeConfig;

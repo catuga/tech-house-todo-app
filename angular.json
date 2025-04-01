@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "to-do": {
+    "todos": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/to-do",
+            "outputPath": "dist/todos",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "to-do:build:production"
+              "buildTarget": "todos:build:production"
             },
             "development": {
-              "buildTarget": "to-do:build:development"
+              "buildTarget": "todos:build:development"
             }
           },
           "defaultConfiguration": "development"

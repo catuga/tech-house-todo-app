@@ -23,6 +23,27 @@ app-root {
   display: block;
 }
 
+.container {
+  width: 100%;
+  margin: 0 auto;
+  
+  @media (min-width: 640px) {
+    max-width: 640px;
+  }
+  
+  @media (min-width: 768px) {
+    max-width: 768px;
+  }
+  
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+  }
+  
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+  }
+}
+
 button {
   border: none;
   background-color: transparent;
@@ -57,13 +78,25 @@ input {
   border-radius: 3px;
 }
 
+textarea {
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+}
+
 .btn-primary {
   height: 46px;
   border-radius: 5px;
-  padding: 12px 141px;
+  padding: 12px 14px;
   background-color: #639605;
   color: white;
   width: 100%;
+  cursor: pointer;
+  &:hover {
+    background-color: darken(#639B31, 10%);
+  }
+  @media (min-width: 1280px) {
+    max-width: 300px;
+  }
 }
 
 h1,

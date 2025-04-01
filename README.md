@@ -1,59 +1,86 @@
-# ToDo
+# Tech House Task Management Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+A task management application built with Angular 17 and Node.js, featuring a clean and intuitive user interface.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- 📝 Create, read, and delete tasks
+- 📱 Responsive design for mobile, tablet, and desktop
+- 🔔 Toast notifications for user feedback
+- 📊 Pagination for task list
+- 🧪 Unit tests
 
+## Tech Stack
+
+### Frontend
+- Angular 19
+- TypeScript
+- Angular Signals
+- Angular Standalone Components
+
+### Backend
+- Node.js
+- TypeScript
+
+## Prerequisites
+
+- Node.js
+- npm or yarn
+
+## Getting Started
+
+1. Clone the repository:
 ```bash
-ng serve
+git clone https://github.com/catuga/tech-house.git
+cd tech-house
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+2. Install frontend dependencies:
 ```bash
-ng generate component component-name
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+3. Install backend dependencies:
 ```bash
-ng generate --help
+cd backend
+npm install
 ```
 
-## Building
-
-To build the project run:
-
+4. Start both frontend and backend servers:
 ```bash
-ng build
+npm start
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+The application will be available at `http://localhost:4200`.
 
-## Running unit tests
+## Testing
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+### Frontend Tests
 ```bash
-ng test
+npm test
 ```
 
-## Running end-to-end tests
+## Project Structure
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+```
+tech-house/
+├── src/                  # Frontend source code
+│   ├── app/              # Angular application
+│   │   ├── components/   # Reusable components
+│   │   ├── services/     # Angular services
+│   │   ├── utils/        # Utility functions and types
+│   │   └── views/        # Page components
+├── backend/              # Backend source code
+│   ├── src/              # Node.js source code
+│   └── package.json      # Backend dependencies
+└── package.json          # Frontend dependencies
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## License
 
-## Additional Resources
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Acknowledgments
+
+- [Angular](https://angular.io/)
+- [Node.js](https://nodejs.org/)

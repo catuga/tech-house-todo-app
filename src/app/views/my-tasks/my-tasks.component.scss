@@ -1,0 +1,44 @@
+.mis-tareas {
+  position: relative;
+  min-height: 200px;
+
+  .loading-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 8px;
+    
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #639B31;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+  }
+
+  .content-blur {
+    filter: blur(2px);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

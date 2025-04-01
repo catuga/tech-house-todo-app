@@ -1,0 +1,9 @@
+<div class="task card">
+  <div>
+    <h2>{{ task.title | capitalizeFirst }}</h2>
+    <p>{{ task.description | truncate:100 }}</p>
+  </div>
+  <button (click)="onDelete()">
+    <img src="assets/images/trash.svg" alt="Ícono tacho de basura">
+  </button>
+</div>

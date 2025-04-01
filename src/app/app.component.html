@@ -1,18 +1,22 @@
 <app-toolbar />
 
 <main>
-  <nav class="tabs-container">
-    @for(tab of tabs; track tab.route) {
-    <a
-      class="tab"
-      [routerLink]="tab.route"
-      routerLinkActive="active"
-      >{{ tab.label }}</a
-    >
-    }
-  </nav>
+  @if (currentRoute() !== '/error') {
+    <nav class="tabs-container container">
+      @for(tab of tabs; track tab.route) {
+        <a
+          class="tab"
+          [routerLink]="tab.route"
+          routerLinkActive="active"
+        >{{ tab.label }}</a>
+      }
+    </nav>
+  }
 
   <section class="content">
-    <router-outlet></router-outlet>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+    <app-toast></app-toast>
   </section>
 </main>

@@ -1,0 +1,65 @@
+<div class="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Añadir tarea</h2>
+      <button class="close-btn" (click)="onClose()">
+        <img src="assets/images/close.svg" alt="Ícono cerrar">
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="taskForm">
+        <div class="form-group">
+          <label for="taskTitle">Título</label>
+          <input 
+            type="text" 
+            id="taskTitle" 
+            formControlName="title" 
+            placeholder="Título de la tarea">
+            @if (titleControl?.touched && titleControl?.errors) {
+              <div class="error-messages">
+                @if (titleControl?.errors?.['required']) {
+                  <small>El título es requerido</small>
+                }
+                @if (titleControl?.errors?.['minlength']) {
+                  <small>El título debe tener al menos 3 caracteres</small>
+                }
+                @if (titleControl?.errors?.['maxlength']) {
+                  <small>El título no puede tener más de 50 caracteres</small>
+                }
+              </div>
+            }
+        </div>
+        <div class="form-group">
+          <label for="taskDescription">Descripción</label>
+          <textarea 
+            id="taskDescription" 
+            formControlName="description" 
+            placeholder="Descripción de la tarea"
+            rows="4"></textarea>
+            @if (descriptionControl?.touched && descriptionControl?.errors) {
+              <div class="error-messages">
+                @if (descriptionControl?.errors?.['required']) {
+                  <small>La descripción es requerida</small>
+                }
+                @if (descriptionControl?.errors?.['minlength']) {
+                  <small>La descripción debe tener al menos 10 caracteres</small>
+                }
+                @if (descriptionControl?.errors?.['maxlength']) {
+                  <small>La descripción no puede tener más de 500 caracteres</small>
+                }
+              </div>
+            }
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-secondary" (click)="onClose()">Cancelar</button>
+      <button 
+        class="btn-primary" 
+        [disabled]="taskForm.invalid"
+        (click)="onSave()">
+        Guardar
+      </button>
+    </div>
+  </div>
+</div>

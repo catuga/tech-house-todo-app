@@ -1,0 +1,41 @@
+<div class="mis-tareas">
+  @if (isLoading()) {
+    <div class="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+  }
+
+  @if (hasError()) {
+    <div class="error-container">
+      <p>Ha ocurrido un error al cargar las tareas</p>
+      <button class="btn-primary" (click)="retryLoad()">
+        Intentar nuevamente
+      </button>
+    </div>
+  } @else {
+    <div [class.content-blur]="isLoading()">
+      @for (task of tasks; track task.id) {
+        <app-task (deleted)="deleteTask($event)" [task]="task"></app-task>
+      }
+
+      <div class="pagination">
+        <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">
+          Anterior
+        </button>
+        <span>{{ currentPage }} de {{ totalPages }}</span>
+        <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">
+          Siguiente
+        </button>
+      </div>
+
+      <button class="btn-primary" (click)="openAddTaskModal()">
+        Añadir tarea
+      </button>
+    </div>
+  }
+</div>
+
+@if (showModal()) {
+<app-add-task-modal (close)="closeModal()" (save)="saveTask($event)">
+</app-add-task-modal>
+}
