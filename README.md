@@ -1,5 +1,7 @@
 # Tech House Task Management Application
 
+![CI/CD](https://github.com/catuga/tech-house-todo-app/workflows/CI/CD/badge.svg)
+
 A task management application built with Angular 17 and Node.js, featuring a clean and intuitive user interface.
 
 ## Features
@@ -94,3 +96,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [Angular](https://angular.io/)
 - [Node.js](https://nodejs.org/)
+
+## CI/CD Pipeline
+
+This project uses GitHub Actions for continuous integration and deployment. The pipeline includes:
+
+- Linting checks
+- Unit tests
+- Production build
+
+The pipeline runs on:
+- Every push to main branch
+- Every pull request to main branch

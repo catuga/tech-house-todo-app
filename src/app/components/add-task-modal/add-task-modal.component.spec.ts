@@ -63,9 +63,9 @@ describe('AddTaskModalComponent', () => {
   });
 
   it('should emit close event', () => {
-    spyOn(component.close, 'emit');
+    spyOn(component.closeModal, 'emit');
     component.onClose();
-    expect(component.close.emit).toHaveBeenCalled();
+    expect(component.closeModal.emit).toHaveBeenCalled();
   });
 
   it('should emit save event with form values when valid', () => {
